@@ -83,13 +83,40 @@ h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;margin-bottom:12px}
 footer{padding:36px 0 44px;text-align:center;color:var(--soft);font-size:.88rem}
 @media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:52px}.skills,.proj,.edu{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1.5px solid var(--ink)}.links{display:none}.contact{padding:42px 22px}.term pre{min-height:300px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.job{opacity:1;transform:none}}
+
+.feat{background:var(--ink);color:#fff;border-radius:28px;padding:40px;display:grid;grid-template-columns:1fr 1.1fr;gap:36px;margin-bottom:16px}
+.feat h3{font-size:1.7rem;margin:10px 0 12px}.feat p{color:#bdb9e6;margin:0 0 16px}
+.tag{font:500 .75rem 'JetBrains Mono',monospace;color:var(--ink);background:var(--mint);padding:3px 10px;border-radius:99px}
+.feat .chips span{background:rgba(255,255,255,.12);color:#e8e6ff}
+.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 14px 44px;color:#d4d1f5;font-size:.95rem}
+.steps li:before{content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:9px;background:var(--violet);display:grid;place-items:center;font:700 .85rem 'Bricolage Grotesque',sans-serif;color:#fff}
+.steps b{color:#fff}
+.cs{background:var(--card);border:1.5px solid var(--ink);border-radius:var(--r);padding:26px;transition:transform .25s,box-shadow .25s}
+.cs:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--violet)}
+.cs h3{font-size:1.25rem;margin-bottom:10px}.cs p{margin:0 0 10px;color:var(--soft);font-size:.95rem}.cs p b{color:var(--ink);font-weight:600}
+.cs .chips{margin-top:14px}
+.more{margin:34px 0 14px;font-size:1.1rem}
+.sdlc{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:20px}
+.sd{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:.82rem;color:var(--soft);line-height:1.45;border-top:4px solid var(--violet)}
+.sd b{display:block;font:700 .95rem 'Bricolage Grotesque',sans-serif;color:var(--ink);margin-bottom:4px}
+.cs ul{margin:0 0 6px;padding-left:18px;color:var(--soft);font-size:.93rem}.cs li{margin-bottom:3px}
+.cs .role{font:500 .75rem 'JetBrains Mono',monospace;color:var(--violet);margin:-4px 0 10px;display:block}
+.proj .cs:last-child:nth-child(odd){grid-column:1/-1}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.feat{grid-template-columns:1fr;padding:28px 22px}.sdlc{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+.ul{margin:12px 0 0;padding-left:18px;color:var(--soft);font-size:.92rem}.ul li{margin-bottom:3px}
+.lead3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.lead3 .box h3{display:flex;align-items:center;gap:10px}.lead3 .box h3 i{font-style:normal;width:34px;height:34px;border-radius:10px;background:var(--violet);color:#fff;display:grid;place-items:center;font-size:1rem}
+@media(max-width:860px){.lead3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap"><nav>
     <a class="logo" href="#top">prakash<i>.dev</i></a>
-    <div class="links"><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
+    <div class="links"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#practice">How I engineer</a><a href="#leadership">Leadership</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
   </nav></div><div id="prog"></div>
 </header>
 
@@ -98,7 +125,7 @@ footer{padding:36px 0 44px;text-align:center;color:var(--soft);font-size:.88rem}
     <div>
       <div class="status"><b></b>Open to new opportunities</div>
       <h1>Prakash Kumar<span>builds backends that scale.</span></h1>
-      <p class="lead">Senior Software Engineer with 6+ years of experience in Laravel, WordPress Multisite, REST APIs and microservices. I turn messy requirements into secure, maintainable PHP systems.</p>
+      <p class="lead">Senior Software Engineer with 6+ years of experience in Laravel, WordPress Multisite, REST APIs and microservices. From a Mayo Clinic WordPress Multisite upgrade to Kafka-driven event architectures, I turn messy requirements into secure, maintainable PHP systems.</p>
       <div class="btns"><a class="btn p" href="#contact">Get in touch</a><a class="btn s" href="Resume.pdf" download>Download résumé</a></div>
     </div>
     <div class="term" aria-label="API response describing Prakash Kumar">
@@ -110,7 +137,7 @@ footer{padding:36px 0 44px;text-align:center;color:var(--soft);font-size:.88rem}
   <div class="stats">
     <div class="stat"><strong data-n="6.5" data-d="1">0</strong><span>Years of experience</span></div>
     <div class="stat"><strong data-n="4">0</strong><span>Companies</span></div>
-    <div class="stat"><strong data-n="5">0</strong><span>Products shipped</span></div>
+    <div class="stat"><strong data-n="10">0</strong><span>Projects delivered</span></div>
     <div class="stat"><strong data-n="3">0</strong><span>PHP frameworks</span></div>
   </div>
 
@@ -137,6 +164,19 @@ footer{padding:36px 0 44px;text-align:center;color:var(--soft);font-size:.88rem}
     </div>
   </section>
 
+  <section id="leadership">
+    <h2>Beyond the code</h2>
+    <p class="sub">Senior work is also about people, process and decisions. This is how I support the team around me.</p>
+    <div class="lead3">
+      <div class="box rv"><h3><i>👥</i>Mentoring juniors</h3><ul class="ul"><li>Pair on difficult tasks and explain the "why" behind patterns</li><li>Help new joiners get productive with codebase walkthroughs</li><li>Give regular, specific feedback to build confidence and skill</li></ul></div>
+      <div class="box rv"><h3><i>🔍</i>Code reviews</h3><ul class="ul"><li>Check readability, SOLID, security, query performance and tests</li><li>Leave clear, actionable comments instead of vague ones</li><li>Keep coding standards consistent across the codebase</li></ul></div>
+      <div class="box rv"><h3><i>📋</i>Task planning</h3><ul class="ul"><li>Break features into sprint-sized tasks with clear acceptance criteria</li><li>Match tasks to each developer's strengths and growth areas</li><li>Flag blockers early in stand-ups and help estimate work</li></ul></div>
+      <div class="box rv"><h3><i>🧭</i>Technical ownership</h3><ul class="ul"><li>Own design choices: patterns, schema and API contracts</li><li>Weigh trade-offs and raise risks before they become delays</li><li>Record important decisions so others understand them</li></ul></div>
+      <div class="box rv"><h3><i>📚</i>Knowledge sharing</h3><ul class="ul"><li>Run knowledge-sharing sessions within teams</li><li>Write onboarding notes and reusable component guides</li><li>Raise team coding standards through shared practices</li></ul></div>
+      <div class="box rv"><h3><i>🛠️</i>Production support</h3><ul class="ul"><li>Investigate issues across dev, QA and production</li><li>Find root causes and fix them so they don't return</li><li>Work with QA, DevOps and product teams and explain issues clearly</li></ul></div>
+    </div>
+  </section>
+
   <section id="skills">
     <h2>What I work with</h2>
     <p class="sub">Backend first, with enough frontend to ship a feature end to end.</p>
@@ -151,14 +191,93 @@ footer{padding:36px 0 44px;text-align:center;color:var(--soft);font-size:.88rem}
   </section>
 
   <section id="projects">
-    <h2>Things I've built</h2>
-    <p class="sub">A mix of internal tools, learning platforms and commerce.</p>
+    <h2>Case studies</h2>
+    <p class="sub">What the problem was, how I approached it, and what I used.</p>
+    <div class="feat rv">
+      <div>
+        <span class="tag">Featured · Enterprise</span>
+        <h3>Mayo Clinic: WordPress Multisite upgrade from PHP 7 to PHP 8</h3>
+        <p>A large healthcare WordPress Multisite network with custom themes, plugins and page templates had to move to a supported PHP version without breaking live sites. I owned the migration and the custom development around it.</p>
+        <p><b style="color:#fff">My role:</b> technical owner for the upgrade work and custom development, from code audit to release support, while reviewing teammates' changes and keeping the team aligned.</p><div class="chips"><span>PHP 7 → 8</span><span>WordPress Multisite</span><span>Custom themes</span><span>Plugins</span><span>Page templates</span><span>Regression testing</span></div>
+      </div>
+      <ol class="steps">
+        <li><b>Audit.</b> Reviewed custom code and active plugins for PHP 8 breaking changes: removed functions, deprecations, stricter type and null handling.</li>
+        <li><b>Refactor.</b> Updated custom plugins, themes and templates to PHP 8 using cleaner OOP structure.</li>
+        <li><b>Build.</b> Developed new themes, plugins and templates that fit the network's multisite structure.</li>
+        <li><b>Verify.</b> Tested through dev, QA and production environments, coordinating fixes with the relevant teams.</li>
+        <li><b>Coordinate.</b> Aligned with QA and infrastructure teams on test windows, fixes and sign-off.</li>
+        <li><b>Release.</b> Staged rollout with monitoring after go-live, then documented the findings for the team.</li>
+      </ol>
+    </div>
     <div class="proj">
-      <div class="pc"><h3>Actual Tuition</h3><p>Online tuition platform with course creation, student enrollment, PayPal payments and Zoom sessions.</p><div class="chips"><span>CodeIgniter</span><span>React</span><span>PayPal</span><span>Zoom</span></div></div>
-      <div class="pc"><h3>RateCalculator</h3><p>Margin engine for US and Indian workers with region-based calculations and an approval flow.</p><div class="chips"><span>Spring Boot</span><span>Angular 13</span></div></div>
-      <div class="pc"><h3>HGComply</h3><p>Internal system for worker details, assignments and time entries with approval workflows.</p><div class="chips"><span>PHP</span><span>PostgreSQL</span></div></div>
-      <div class="pc"><h3>FriendsForever</h3><p>Pet-products store with Stripe checkout and automated email notifications.</p><div class="chips"><span>Laravel</span><span>Stripe</span></div></div>
-      <div class="pc"><h3>YoungIndians</h3><p>Content admin where teams manage pages, categories and gallery items.</p><div class="chips"><span>Laravel</span><span>MySQL</span><span>jQuery</span></div></div>
+      <div class="cs rv"><h3>Event-driven services with Kafka</h3>
+        <p><b>Challenge:</b> Services calling each other synchronously made features slow and one failure could ripple everywhere.</p>
+        <p><b>Approach:</b> Laravel services publish domain events to Kafka topics. Independent consumers handle notifications, data sync and audit work asynchronously, with retries and safe re-processing.</p>
+        <p><b>Patterns:</b> publish/subscribe, event-driven architecture, loose coupling.</p>
+        <ul class="ul"><li>Defined topics and event contracts (name, payload, versioning) with the team</li><li>Built Laravel producers and consumer workers for notifications, sync and audit trails</li><li>Added idempotent handling, retries and failure isolation so one bad message never blocks the rest</li><li>Documented the event flow and reviewed teammates' consumers</li></ul><div class="chips"><span>Laravel</span><span>Kafka</span><span>MySQL</span><span>Docker</span></div></div>
+      <div class="cs rv"><h3>Background processing with Laravel queues</h3>
+        <p><b>Challenge:</b> Emails, exports and third-party syncs were slowing down web requests.</p>
+        <p><b>Approach:</b> Moved heavy work into queued jobs with retry and failure handling, used events and listeners to decouple logic, and scheduled recurring tasks through cron and the Laravel scheduler.</p>
+        <p><b>Outcome:</b> Faster responses and workflows that recover from failures.</p>
+        <ul class="ul"><li>Split work into separate queues by priority so urgent jobs are never stuck behind bulk work</li><li>Configured retries, backoff and failed-job handling, with a process for re-running failures</li><li>Used events and listeners to keep controllers thin and logic reusable</li><li>Scheduled recurring tasks (reports, clean-ups, syncs) through cron</li></ul><div class="chips"><span>Laravel Queue</span><span>Jobs &amp; events</span><span>Scheduler</span><span>Cron</span></div></div>
+      <div class="cs rv"><h3>Modular WordPress plugin architecture</h3>
+        <p><b>Challenge:</b> Plugin code grew tangled and hard to reuse across a large network.</p>
+        <p><b>Approach:</b> Built plugins as loosely coupled modules using SOLID, dependency injection and Repository/Factory patterns, with Composer autoloading and PHPUnit tests.</p>
+        <p><b>Outcome:</b> Reusable components that are easier to maintain, review and extend.</p>
+        <ul class="ul"><li>Set up a base plugin structure with Composer autoloading and a clear module layout</li><li>Used dependency injection and Repository classes to separate WordPress hooks from business logic</li><li>Wrote PHPUnit tests for core classes so changes could ship safely</li><li>Created a short guide so juniors could add modules the same way</li></ul><div class="chips"><span>PHP 8</span><span>WordPress</span><span>SOLID</span><span>Composer</span><span>PHPUnit</span></div></div>
+      <div class="cs rv"><h3>Secure REST API layer</h3>
+        <p><b>Challenge:</b> CMS-based apps and third-party clients needed fast, protected data access.</p>
+        <p><b>Approach:</b> Designed REST endpoints with JWT/token authentication, OAuth 2.0, Sanctum/Passport and role-based access, validated and tested with Postman.</p>
+        <p><b>Delivered in:</b> Yii and Laravel projects.</p>
+        <ul class="ul"><li>Implemented the token lifecycle: issue, validate, refresh and revoke</li><li>Added role-based middleware and strict request validation on every endpoint</li><li>Kept responses consistent and endpoints versioned for stable client integrations</li><li>Shared Postman collections so QA and front-end teams could test early</li></ul><div class="chips"><span>REST</span><span>JWT</span><span>OAuth 2.0</span><span>RBAC</span><span>Postman</span></div></div>
+    </div>
+    <h3 class="more">More projects</h3>
+    <div class="proj">
+      <div class="cs rv"><h3>Actual Tuition</h3><span class="role">Learning platform · Full-stack</span>
+        <p><b>Goal:</b> Give tutors one place to sell courses, enroll students, take payments and teach live.</p>
+        <p><b>What I built:</b></p><ul><li>Course creation and management for tutors, with separate student and admin roles</li><li>Student enrollment flow tied to course access</li><li>PayPal checkout with payment confirmation before access is granted</li><li>Zoom integration to schedule and join virtual sessions</li><li>React front end talking to a CodeIgniter backend</li></ul>
+        <p><b>Engineering notes:</b> MVC structure, API-driven UI, third-party payment and video integrations.</p>
+        <ul class="ul"><li>Course and lesson management for tutors</li><li>Student enrollment with PayPal payment flow</li><li>Zoom integration to create and join virtual sessions</li><li>React front end on a CodeIgniter backend</li></ul><div class="chips"><span>CodeIgniter</span><span>React.js</span><span>PayPal</span><span>Zoom API</span><span>MySQL</span></div></div>
+      <div class="cs rv"><h3>RateCalculator</h3><span class="role">Finance tool · Full-stack</span>
+        <p><b>Goal:</b> Calculate worker margins consistently for the US and India, where cost rules differ by region.</p>
+        <p><b>What I built:</b></p><ul><li>Region-based calculation engine built as a Spring Boot service</li><li>Angular 13 interface for entering inputs and reviewing results</li><li>Approval flow so rates are reviewed before they are final</li><li>Separate rule handling for US and Indian workers</li></ul>
+        <p><b>Engineering notes:</b> Business rules kept in the service layer, away from the UI, so each region can change independently.</p>
+        <ul class="ul"><li>Region-based margin rules for US and Indian workers</li><li>Approval workflow with clear states and roles</li><li>Angular 13 interface backed by Spring Boot services</li></ul><div class="chips"><span>Spring Boot</span><span>Java</span><span>Angular 13</span><span>REST</span></div></div>
+      <div class="cs rv"><h3>HGComply</h3><span class="role">Internal system · Backend</span>
+        <p><b>Goal:</b> Run worker details, assignments and time tracking in one internal system with clear approvals.</p>
+        <p><b>What I built:</b></p><ul><li>Worker profile and assignment management</li><li>Time-entry module for logging hours against assignments</li><li>Multi-step approval workflow for submitted time</li><li>Relational schema in PostgreSQL with indexed queries for reports</li></ul>
+        <p><b>Engineering notes:</b> Relational design, state-based approvals and query optimisation.</p>
+        <ul class="ul"><li>Worker records and assignment management</li><li>Time-entry module with approval workflows</li><li>PostgreSQL queries and reports for admins</li></ul><div class="chips"><span>PHP</span><span>PostgreSQL</span><span>Workflows</span><span>SQL tuning</span></div></div>
+      <div class="cs rv"><h3>FriendsForever</h3><span class="role">E-commerce · Laravel</span>
+        <p><b>Goal:</b> Launch an online store for pet products with secure payments and automatic customer emails.</p>
+        <p><b>What I built:</b></p><ul><li>Product catalogue, cart and checkout</li><li>Stripe payment integration</li><li>Automated email notifications for customer actions</li><li>Admin tools to keep products and orders up to date</li></ul>
+        <p><b>Engineering notes:</b> Laravel MVC with Eloquent models and Laravel mail notifications.</p>
+        <ul class="ul"><li>Product catalogue, cart and checkout</li><li>Stripe payment integration</li><li>Automated order and notification emails</li></ul><div class="chips"><span>Laravel</span><span>Stripe</span><span>MySQL</span><span>Email automation</span></div></div>
+      <div class="cs rv"><h3>YoungIndians</h3><span class="role">Content platform · Laravel</span>
+        <p><b>Goal:</b> Let non-technical admins keep the website current without asking a developer.</p>
+        <p><b>What I built:</b></p><ul><li>Admin backend for managing pages, categories and gallery items</li><li>MySQL-driven data models for dynamic site content</li><li>jQuery-powered interactions on the front end</li></ul>
+        <p><b>Engineering notes:</b> Clear separation of content models and presentation so new sections are easy to add.</p>
+        <ul class="ul"><li>Admin screens for pages, categories and gallery items</li><li>MySQL-driven data models</li><li>jQuery interactions for a smoother editing experience</li></ul><div class="chips"><span>Laravel</span><span>MySQL</span><span>jQuery</span><span>Admin panel</span></div></div>
+    </div>
+  </section>
+
+  <section id="practice">
+    <h2>How I engineer</h2>
+    <p class="sub">The principles and process behind the code, from requirement to production.</p>
+    <div class="skills">
+      <div class="box rv"><h3>Design patterns &amp; principles</h3><div class="chips"><span>SOLID</span><span>Repository</span><span>Factory</span><span>Singleton</span><span>Dependency injection</span><span>MVC</span><span>Traits &amp; interfaces</span></div></div>
+      <div class="box rv"><h3>Architecture</h3><div class="chips"><span>Event-driven (Kafka)</span><span>Queues &amp; jobs</span><span>Modular design</span><span>Microservices basics</span></div></div>
+      <div class="box rv"><h3>Quality &amp; delivery</h3><div class="chips"><span>Code reviews</span><span>PHPUnit</span><span>Git workflows</span><span>CI/CD</span><span>Docker</span></div></div>
+    </div>
+    <h3 class="more">My SDLC in Agile/Scrum teams</h3>
+    <div class="sdlc">
+      <div class="sd rv"><b>Plan</b>Clarify requirements and acceptance criteria in refinement.</div>
+      <div class="sd rv"><b>Design</b>Choose patterns, data model and API contracts.</div>
+      <div class="sd rv"><b>Build</b>Small, modular commits on feature branches.</div>
+      <div class="sd rv"><b>Review</b>Peer code reviews for quality and consistency.</div>
+      <div class="sd rv"><b>Test</b>Unit tests and QA across dev, QA and UAT.</div>
+      <div class="sd rv"><b>Release</b>CI/CD pipelines for controlled delivery.</div>
+      <div class="sd rv"><b>Support</b>Investigate issues and tune performance.</div>
     </div>
   </section>
 
@@ -190,7 +309,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 // Hero: API response types out
 const lines=[
 ['<span class="ok">HTTP/1.1 200 OK</span>\n'],
-['{\n  <span class="k">"name"</span>: <span class="s">"Prakash Kumar"</span>,\n  <span class="k">"role"</span>: <span class="s">"Senior Software Engineer"</span>,\n  <span class="k">"location"</span>: <span class="s">"Noida, India"</span>,\n  <span class="k">"experience_years"</span>: <span class="n">6.5</span>,\n  <span class="k">"stack"</span>: [<span class="s">"Laravel"</span>, <span class="s">"WordPress"</span>,\n            <span class="s">"REST APIs"</span>, <span class="s">"Kafka"</span>, <span class="s">"AWS"</span>],\n  <span class="k">"currently"</span>: <span class="s">"SD Analyst @ ValueLabs"</span>,\n  <span class="k">"available"</span>: <span class="n">true</span>\n}']
+['{\n  <span class="k">"name"</span>: <span class="s">"Prakash Kumar"</span>,\n  <span class="k">"role"</span>: <span class="s">"Senior Software Engineer"</span>,\n  <span class="k">"location"</span>: <span class="s">"Noida, India"</span>,\n  <span class="k">"experience_years"</span>: <span class="n">6.5</span>,\n  <span class="k">"stack"</span>: [<span class="s">"Laravel"</span>, <span class="s">"WordPress"</span>,\n            <span class="s">"REST APIs"</span>, <span class="s">"Kafka"</span>, <span class="s">"AWS"</span>],\n  <span class="k">"focus"</span>: <span class="s">"Event-driven systems, WP Multisite"</span>,\n  <span class="k">"currently"</span>: <span class="s">"SD Analyst @ ValueLabs"</span>,\n  <span class="k">"available"</span>: <span class="n">true</span>\n}']
 ];
 const out=document.getElementById('out'),html=lines.flat().join('');
 if(reduce){out.innerHTML=html}else{
@@ -216,7 +335,7 @@ document.querySelectorAll('[data-n]').forEach(n=>io.observe(n));
 
 // Timeline reveal
 const jo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');jo.unobserve(e.target)}}),{threshold:.25});
-document.querySelectorAll('.job').forEach(j=>jo.observe(j));
+document.querySelectorAll('.job,.rv').forEach(j=>jo.observe(j));
 
 // Scroll progress + timeline fill
 const prog=document.getElementById('prog'),tl=document.getElementById('tl');
